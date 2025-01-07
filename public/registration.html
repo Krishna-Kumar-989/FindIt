@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="navbar">
+    <div>
+      <button class="btn_nav" id="btnhome">
+        <img src="./resources/home.png" alt="Icon" style="width: 20px; height: 20px; vertical-align: middle;"></button>
+    </div>
+    
+
+  </div>
+
+</br>
+
+
+
+
+  <div class="area">
+    <div class="main-area">
+      <div class="heading">
+        Register New Lost item
+      </div>
+
+      <br><br>
+
+      <div class="basic_info">
+        <textarea placeholder="Item Name" class="textareaa" id="item_name" required></textarea>
+      </div>
+
+      <div class="basic_info">
+        <textarea placeholder="Place" class="textareaa" id="place" required></textarea>
+      </div>
+
+      <div class="basic_info">
+        <textarea placeholder="Time" class="textareaa" id="time" required></textarea>
+      </div>
+
+      <div class="basic_info">
+        <textarea placeholder="Contact info" class="textareaa" id="contact" required></textarea>
+      </div>
+
+      <div class="basic_info" id="descpdiv">
+        <textarea placeholder="Description" class="textareaa" id="descptext" required></textarea>
+      </div>
+
+
+      <div class="basic_info">
+      <select id="statusDropdown">
+        <option value="lost">Lost</option>
+        <option value="found">Found</option>
+      </select>
+    </div>
+
+
+
+
+
+      <div class="heading">
+        <button id="submit"><img src="./resources/submit.png" alt="Submit" style="width: 20px; height: 20px; vertical-align: middle;"></button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+
+  
+
+
+
+
+
+  
+/*css for navbar*/
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow for 3D effect */
+    backdrop-filter: blur(10px); /* Glass-like blur effect */
+   
+}
+
+.btn_nav {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px); /* Glass-like blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+}
+
+.btn_nav:hover {
+    background-color: rgba(72, 163, 255, 0.2); /* Light blue semi-transparent background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transform: translateY(-2px); /* Slight raise effect */
+}
+
+
+/*css for navbar ends*/
+  
+
+
+
+
+  .area {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .main-area {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    border: 10px;
+    padding: 50px;
+    border-radius: 25px;
+    background: lightgray;
+  }
+
+  .heading {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    justify-content: center;
+    font-size: larger;
+    height: 50px;
+  }
+
+  .basic_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 35px;
+  }
+
+  .textareaa {
+    color: black;
+    width: 100%;
+    resize: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+  }
+
+  #descpdiv {
+    height: 45%;
+  }
+
+  #descptext {
+    flex-wrap: wrap;
+    height: 100%;
+    border-radius: 10px;
+    font-weight: lighter;
+  }
+
+  #submit {
+    border-radius: 10px;
+    height: 100%;
+    background-color:transparent;
+    padding: 10px;
+    margin: 10px;
+    border: 0px;
+  }
+
+
+/*css for lost found bar*/
+#statusDropdown {
+  font-size: 16px;
+  padding: 10px;
+  background-color: silver ;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
+  justify-content: center;
+}
+
+#statusDropdown:focus {
+  outline: none;
+  border-color: #4caf50; /* Green border when focused */
+}
+
+/*css for  lost found ends*/
+
+
+
+
+
+
+
+
+</style>
+
+<script>
+
+
+/////////code for home button
+let home_btn = document.getElementById('btnhome');
+home_btn.onclick= ()=>{
+    window.location.href = 'navbar.html';
+}
+/////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+///logic for lost found dropdown////////////////////////////////
+let selectedStatus = "lost";  // Define the variable outside the function
+
+const dropdown = document.getElementById('statusDropdown');
+
+// Listen for changes to the dropdown
+dropdown.addEventListener('change', () => {
+  selectedStatus = dropdown.value;  // Update selectedStatus based on the dropdown value
+  console.log('Selected Status:', selectedStatus + typeof(selectedStatus)+selectedStatus.length);  // Log the selected value
+});
+
+
+
+
+
+////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+  document.getElementById("submit").addEventListener("click", post_data);
+  
+  
+  async function post_data (e) {
+    const item_name = document.getElementById("item_name").value;  // Read the text from textarea
+    const place = document.getElementById("place").value; 
+    const time = document.getElementById("time").value; 
+    const contact = document.getElementById("contact").value; 
+    const description = document.getElementById("descptext").value; 
+    //const user_who_registered = localStorage.getItem('current_session');
+
+
+
+    // Check if any field is empty
+    if (!item_name || !place || !time || !contact || !description) {
+      alert("All fields are required!");
+      return;  // Stop the function if any field is empty
+    }
+
+    // Retrieve the current counter from localStorage
+    let counter = localStorage.getItem("counter");
+    if (!counter) {
+      counter = 0;  // Initialize counter if it doesn't exist
+    }
+
+    counter++;  // Increment the counter for the next item
+
+    // Create a sequential ID 
+    const sequentialId = String(counter);
+
+    // Create a JavaScript object to store the text and additional data
+    const textObject = {
+      user_who_registered :  localStorage.getItem('current_session'),
+      is_resolved : false,
+      lost_or_found :selectedStatus,
+      name: item_name,
+      place: place,
+      time: time,
+      contact: contact,
+      description: description,
+      timestamp: new Date().toLocaleString('en-IN', {
+  day: '2-digit',   // '2-digit' will return day with 2 digits
+  month: '2-digit', // '2-digit' will return month with 2 digits
+  year: 'numeric',  // 'numeric' will return the full year
+  hour: '2-digit',  // '2-digit' for hour in 24-hour format
+  minute: '2-digit', // '2-digit' for minutes
+  second: '2-digit', // '2-digit' for seconds
+  hour12: false,     // false for 24-hour time format
+}),
+      
+      
+      
+      // Store the time when the text was saved
+    };
+
+    // Convert the JavaScript object into a JSON string
+    const jsonString = JSON.stringify(textObject);
+
+    const baseUrl = '/registration'
+     
+    const res = await fetch ( baseUrl  ,
+    {
+
+       method : 'POST',
+      
+       headers :{
+       "Content-Type" : 'application/json'
+
+       },
+
+       body:jsonString,
+
+
+    }
+
+
+    )
+    
+
+     
+
+
+
+
+    
+    alert("Item registered successfully!");
+     
+     window.location.href = "navbar.html";
+
+
+
+
+  }
+
+
+/////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

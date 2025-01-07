@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <div class="navbar">
+    <div>
+      <button class="btn_nav" id="btnhome"> <img src="./resources/home.png" alt="Icon" style="width: 20px; height: 20px; vertical-align: middle;"></button>
+    </div>
+ 
+   
+  </div>
+
+</br>
+
+  
+  <div class="area">
+    <div class="main-area">
+      <div class="heading">
+        Details
+      </div>
+  
+      <br><br>
+  
+      <div class="basic_info">
+        <div class="label">Item Name:</div>
+        <button class="textareaa" id="item_name" required>Sample Item</button>
+      </div>
+
+      
+      <div class="basic_info">
+        <div class="label">Status:</div>
+        <button class="textareaa" id="lfstatus" required></button>
+      </div>
+  
+      <div class="basic_info">
+        <div class="label">Place:</div>
+        <button class="textareaa" id="place" required>Sample Place</button>
+      </div>
+  
+      <div class="basic_info">
+        <div class="label">Time:</div>
+        <button class="textareaa" id="time" required>12:00 PM</button>
+      </div>
+  
+      <div class="basic_info">
+        <div class="label">Contact:</div>
+        <button class="textareaa" id="contact" required>+1234567890</button>
+      </div>
+  
+      <div class="basic_info" id="descpdiv">
+        <div class="label">Description:</div>
+        <button class="textareaa" id="descptext" required>Sample description of the item or event.</button>
+      </div>
+
+
+
+      
+  
+      <!-- Case Resolved Section -->
+      <div class="basic_info">
+        <div class="label">Case Resolved:</div>
+        <button class="textareaa" id="case_resolved" required>Yes/No</button>
+      </div>
+  
+      <!-- Mark as Resolved Button (Initially Hidden) -->
+      <div class="basic_info">
+        <button class="btn_nav" id="mark_resolved" hidden>Mark as Resolved</button>
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+
+
+
+
+
+<hr>
+
+<footer class="site-footer" id="navbar_footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-copyright">&copy; 2024 FindIt . All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="">About</a>
+          <a href="">Privacy Policy</a>
+        </nav>
+        <div class="footer-socials">
+          <span>Follow us:</span>
+          <a href="https://facebook.com" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-contacts">
+        <p>Contact Us:</p>
+        <p>Email: <a href="mailto:krishnakr989@yahoo.com">krishnakr989@yahoo.com</a></p>
+        <p>Phone: <a href="tel:+91 1234567890">+91 1234567890</a></p>
+        <p>Address: Earth</p>
+      </div>
+    </div>
+  </footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+<style>
+
+
+
+    
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+
+
+
+  /* General Font and Background Styling */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/*css for navbar*/
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow for 3D effect */
+    backdrop-filter: blur(10px); /* Glass-like blur effect */
+   
+}
+
+.btn_nav {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px); /* Glass-like blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+}
+
+.btn_nav:hover {
+    background-color: rgba(72, 163, 255, 0.2); /* Light blue semi-transparent background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transform: translateY(-2px); /* Slight raise effect */
+}
+
+
+
+
+  
+/*css for navbar  ends*/
+  
+
+
+
+/* Main Content Area */
+.area {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  padding: 50px;
+  border-radius: 25px;
+  background: lightgray;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Labels and Content Styling */
+.basic_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.textareaa {
+  font-size: 12px;
+  font-weight: 40;
+  
+  color:black;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#descpdiv {
+  height: 45%;
+}
+
+#descptext {
+  font-weight: 20;
+
+}
+
+/* Case Resolved Box */
+.basic_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.textareaa {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* "Mark as Resolved" Button Styling */
+#mark_resolved {
+  display: block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: none;
+  background-color:silver; /* Blue color for the button */
+  color:  black;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 45px;
+}
+
+#mark_resolved:hover {
+  background-color: gray; /* Darker blue on hover */
+}
+
+#mark_resolved[hidden] {
+  display: none;
+}
+  
+/******************/
+
+/*Footer content start*/
+/* Footer Styling */
+.site-footer {
+    background-color:#333333;
+    color: #f2f2f2;
+    padding: 10px 0; /* Reduced vertical padding */
+    font-family: Arial, sans-serif;
+   position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* Enable flexbox for alignment */
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+   
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    gap: 10px; /* Add spacing between sections */
+}
+
+.footer-nav {
+    margin: 10px 0;
+}
+
+.footer-nav a {
+    color: #f2f2f2;
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ff5722;
+}
+
+.footer-contacts {
+    text-align: right; /* Align content to the right */
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-contacts a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+.footer-contacts a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.social-icon {
+    color: #f2f2f2;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff5722;
+    transform: scale(1.2);
+}
+
+/*Footer content end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<script>
+
+
+
+/////////code for home button
+let home_btn = document.getElementById('btnhome');
+home_btn.onclick= ()=>{
+    window.location.href = 'navbar.html';
+}
+/////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+// Get data from localStorage
+const storedData = localStorage.getItem("details");
+
+
+let user_registered ;
+let case_resol_status;
+let info_id ;
+
+
+// If data exists, parse it
+if (storedData) {
+  const details = JSON.parse(storedData);
+
+
+
+  const item_name = document.getElementById('item_name');
+const place = document.getElementById('place');
+const time = document.getElementById('time');
+const contact = document.getElementById('contact');
+const descptext = document.getElementById('descptext');
+const resolved_status = document.getElementById('case_resolved');
+const lfstatus = document.getElementById('lfstatus');
+
+
+const storedDataobj = JSON.parse(storedData);
+
+           //for mark as done button//
+user_registered = storedDataobj[0].user_who_registered;
+case_resol_status = storedDataobj[0].is_resolved;
+info_id = storedDataobj[0]._id;
+                       //
+
+
+
+
+console.log(storedData)
+
+  // Use details object properties
+  item_name.innerText = storedDataobj[0].name;
+  place.innerText = storedDataobj[0].place;
+  time.innerText = storedDataobj[0].time;
+  contact.innerText = storedDataobj[0].contact;
+  descptext.innerText = storedDataobj[0].description;
+  case_resolved.innerText = storedDataobj[0].is_resolved?"Yes":"No";
+  lfstatus.innerText = storedDataobj[0].lost_or_found;
+  
+}
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////mark as resolved button///////////////////////////////////
+let conditionFulfilled = false;
+
+console.log((user_registered) == localStorage.getItem('current_session'));
+
+if(!case_resol_status && localStorage.getItem('current_session'))
+{
+
+  conditionFulfilled = true;
+
+}
+
+
+
+
+
+
+const markResolvedButton = document.getElementById('mark_resolved');
+
+
+if (conditionFulfilled) {
+  markResolvedButton.hidden = false;
+} else {
+  markResolvedButton.hidden = true;
+}
+
+
+markResolvedButton.onclick = async () =>{
+
+
+
+  conditionFulfilled = false ;
+  case_resol_status = true;
+
+
+
+  
+//logic to edit database
+
+
+let resolved_object ={
+
+  info_id : info_id,
+  case_resol_status : case_resol_status,
+
+
+}
+
+
+
+
+
+
+const value = JSON.stringify(resolved_object);
+
+    const baseUrl = '/markasresolved'
+     
+     await fetch ( baseUrl  ,
+    {
+
+       method : 'POST',
+      
+       headers :{
+       "Content-Type" : 'application/json'
+
+       },
+
+       body:value,
+
+
+    }
+
+
+    )
+    
+
+    .then(
+         window.location.href= "navbar.html"
+    )
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////
+
+</script>

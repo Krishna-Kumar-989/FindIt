@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <div class="navbar">
+    <div>
+      <button class="btn_nav" id="btnhome"><img src="./resources/random.png" alt="Home" style="width: 30px; height: 30px; vertical-align: middle;"></button>
+    </div>
+    
+<div class="utility" id ="registermessage">
+
+  <button class = "util-btn">Register new lost</button>
+  
+  
+  </div>
+    <div>
+      <button class="btn_nav" id="btnaccount"><img src="./resources/user.png" alt="Account" style="width: 20px; height: 20px; vertical-align: middle;"></button>
+    </div>
+  </div>
+
+</br>
+
+
+
+
+
+<div id="message-list">
+
+
+
+
+
+</div>
+
+</body>
+<hr>
+
+<footer class="site-footer" id="navbar_footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-copyright">&copy; 2024 FindIt . All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="">About</a>
+          <a href="">Privacy Policy</a>
+        </nav>
+        <div class="footer-socials">
+          <span>Follow us:</span>
+          <a href="https://facebook.com" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-contacts">
+        <p>Contact Us:</p>
+        <p>Email: <a href="mailto:krishnakr989@yahoo.com">krishnakr989@yahoo.com</a></p>
+        <p>Phone: <a href="tel:+91 1234567890">+91 1234567890</a></p>
+        <p>Address: Earth</p>
+      </div>
+    </div>
+  </footer>
+  
+
+
+
+
+
+
+
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*css for navbar*/
+/* Navbar with Glass-like Effect */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Thin black border */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow for 3D effect */
+    backdrop-filter: blur(10px); /* Glass-like blur effect */
+}
+
+/* Main Nav Button */
+.btn_nav {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px); /* Glass-like blur effect */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Thin black border */
+}
+
+.btn_nav:hover {
+    background-color: rgba(72, 163, 255, 0.2); /* Light blue semi-transparent background on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transform: translateY(-2px); /* Slight raise effect */
+}
+
+/* Utility Button (e.g., Register Button) */
+
+.util-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: whitesmoke; /* Semi-transparent purple background */
+    color: black; /* Black text for visibility */
+    cursor: pointer;
+    border-radius: 50px; /* Rounded corners for pill shape */
+    font-size: 16px;
+    font-weight: 200;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px); /* Glass-like blur effect */
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+}
+
+.util-btn:hover {
+    background-color: lightgray; /* Darker purple on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transform: translateY(-2px); /* Slight raise effect for 3D hover effect */
+}
+
+/*css for navbar  ends*/
+  
+
+
+
+
+#message-list{
+display: flex;
+flex-direction: column-reverse;
+justify-content:start;
+height: 80%;
+
+}
+
+
+
+
+
+.list_btn{
+
+ text-align: left;
+ text-shadow: #45a049;
+ 
+
+
+}
+
+
+
+
+
+
+/*Footer content start*/
+/* Footer Styling */
+.site-footer {
+    background-color:#333333;
+    color: #f2f2f2;
+    padding: 10px 0; /* Reduced vertical padding */
+    font-family: Arial, sans-serif;
+   position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex; /* Enable flexbox for alignment */
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+   
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column; /* Stack sections vertically */
+    gap: 10px; /* Add spacing between sections */
+}
+
+.footer-nav {
+    margin: 10px 0;
+}
+
+.footer-nav a {
+    color: #f2f2f2;
+    margin: 0 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ff5722;
+}
+
+.footer-contacts {
+    text-align: right; /* Align content to the right */
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-contacts a {
+    color: #ff5722;
+    text-decoration: none;
+}
+
+.footer-contacts a:hover {
+    text-decoration: underline;
+}
+
+.footer-socials {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.social-icon {
+    color: #f2f2f2;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ff5722;
+    transform: scale(1.2);
+}
+
+/*Footer content end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<script>
+
+localStorage.setItem('details', "");
+
+
+
+
+
+/////////code for home button
+let home_btn = document.getElementById('btnhome');
+home_btn.onclick= ()=>{
+    window.location.href = 'navbar.html';
+}
+/////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+let count = 0;
+ 
+
+
+ let prejsonData; //stores temp json data
+
+
+
+
+fetch('/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ key: 'value' }) // Optional data to send
+})
+    .then(response => response.json()) // Parse JSON from the server response
+    .then(data => {
+        prejsonData = data; // Store the received JSON in the variable
+        console.log('Received data:', prejsonData);
+        console.log(typeof(prejsonData))
+    })
+
+
+
+    .then(data=> add_buttons(prejsonData) )
+
+
+
+
+
+    .catch(error => console.error('Error:', error));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function create_message(i,prejsonData) {
+
+  const message_container = document.createElement("div");
+  message_container.id = 'message_container'
+
+
+  const message = document.createElement("button");
+
+  const time = document.createElement("button");
+
+  const open_btn = document.createElement("button")
+
+
+  
+  message.innerHTML = prejsonData[i].name ;  // Set button text
+
+
+  time.innerText = prejsonData[i].timestamp;
+
+
+
+
+
+// Apply inline styles to the button using the 'style' property
+message.style.backgroundColor = 'grey';  
+message.style.color = 'white';  
+message.style.padding = '30px 30px'; 
+message.style.fontSize = '16px';  
+message.style.border = '10px';  
+message.style.borderRadius = '5px'; 
+message.style.width = '75%'
+message.style.textAlign = 'left'
+
+
+message_container.style.display = 'flex'
+message_container.style.flexDirection = 'row'
+message_container.style.padding ='16px'
+
+message_container.style.width = '100%'
+
+
+
+
+
+time.style.backgroundColor = 'light grey'
+time.style.width = '15%'
+
+
+open_btn.style.color = 'cream'
+open_btn.style.width = '5%'
+open_btn.id = prejsonData[i]._id,
+open_btn.innerHTML = '<img src="./resources/open.png" alt="->" style="width: 20px; height: 20px;">';
+
+open_btn.addEventListener("click",function(){On_click_open_btn(count,open_btn.id)})
+
+
+
+
+
+
+
+
+
+
+
+  message.id = `message${i}`;  // Set a unique ID using template literals
+  
+  const div = document.querySelector("#message-list");
+
+  div.appendChild(message_container)
+
+  // Append the button to the div
+  message_container.appendChild(message);
+  message_container.appendChild(time)
+  message_container.appendChild(open_btn);
+
+
+
+
+
+
+
+
+ 
+
+  
+}
+
+
+
+
+
+
+
+function href(){
+
+window.location.href="registration.html";
+
+}
+
+function href_account_btn(){
+
+window.location.href="Account.html";
+
+}
+
+
+
+
+
+
+
+
+
+
+function add_buttons(prejsonData){
+
+
+
+ 
+  count = prejsonData.length;
+         
+
+   console.log(count);
+
+
+   console.log(typeof(prejsonData))
+
+
+
+
+const register = document.getElementById("registermessage");
+register.addEventListener("click", href);
+
+
+
+const account_btn = document.getElementById("btnaccount");
+
+account_btn.addEventListener("click",()=>{href_account_btn()});
+
+
+
+
+
+
+ for (let i = 0; i < count; i++) {
+
+
+  create_message(i,prejsonData);
+
+ }
+
+
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//fetch on click data
+
+
+function href_details() {
+    // Redirect to the display_info.html page
+    window.location.href = "display_info.html";
+}
+
+function fetch_details(count, id_to_fetch) {
+    // Code to receive the details to display
+    fetch('/details', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: id_to_fetch }) // Wrap id_to_fetch in an object
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Parse JSON from the server response
+        })
+        .then(data => {
+            console.log('Received data:', data);
+            
+            // Store the details in localStorage for use on the next page
+            localStorage.setItem('details', JSON.stringify(data));
+            
+            // Redirect to the next page
+            href_details();
+        })
+        .catch(error => {
+            console.error('Error fetching details:', error);
+        });
+}
+
+
+
+////initiate onclick feature for listing messages/////////
+
+function On_click_open_btn(count,btn_id)
+{
+
+
+   fetch_details(count,btn_id);
+
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////footer recieves session username //////////////////////////////////////
+
+
+fetch('/footer', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ }) // Wrap id_to_fetch in an object
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Parse JSON from the server response
+        })
+        .then(data => {
+            console.log('Received data footer:', data);
+           
+            
+  localStorage.setItem('current_session',data.current_session);
+  localStorage.setItem('user_details', JSON.stringify(data.details));
+
+            
+            
+        })
+        .catch(error => {
+            console.error('Error fetching details:', error);
+        });
+
+
+
+
+
+///////////////////////////footer recieves session ends////////
+/*
+
+fetch('http://localhost:3000/account', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ }) // Wrap id_to_fetch in an object
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // Parse JSON from the server response
+        })
+        .then(data => {
+            console.log('Received data account:', data);
+           
+            
+            localStorage.setItem('user_details', JSON.stringify(data))
+            
+            
+        })
+        .catch(error => {
+            console.error('Error fetching details:', error);
+        });
+
+*/
+
+/////adding account data/////////
+
+
+
+
+
+
+/////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</html>

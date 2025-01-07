@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styling for the welcome message */
+        h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        /* Styling for the enter button */
+        .enter-button {
+            position: fixed;
+            bottom: 20px;  /* Button at the bottom of the page */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for the button */
+        .enter-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome message -->
+    <h1>Welcome to FindIt!</h1>
+
+    <!-- Enter button -->
+    <button class="enter-button" id = "enter_btn">Enter</button>
+
+</body>
+</html>
+
+
+
+<script>
+
+window.onload = function() {
+    
+
+  localStorage.setItem('current_session', '');
+
+
+
+};
+
+
+
+
+let enter = document.getElementById("enter_btn");
+
+enter.onclick = function() {
+  if (localStorage.getItem('current_session') === null || localStorage.getItem('current_session') === '') {
+    window.location.href = "signup.html";
+  } 
+};
+
+
+
+
+
+
+</script>
